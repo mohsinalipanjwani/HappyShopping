@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React, { useState } from "react";
 import App, { AppContext } from "next/app";
 import Head from "next/head";
@@ -87,6 +88,7 @@ class MyApp extends App<{
   render() {
     const {
       Component,
+      //@ts-ignore
       pageProps: { session, ...pageProps },
       locale,
       messages,

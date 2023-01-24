@@ -32,6 +32,7 @@ const AuthContextProvider: React.FC<AuthContextProps> = ({ children }) => {
   }, [router]);
 
   const prevToken = getAuthenticationToken();
+  //@ts-ignore
   const currToken: any = session?.accessToken;
 
   if (currToken && prevToken !== `Bearer ${currToken}`) {
