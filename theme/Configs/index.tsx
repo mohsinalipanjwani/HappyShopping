@@ -11,89 +11,100 @@ export let getDesignTokens = (mode: PaletteMode) => {
         ? {
             // palette values for light mode
             primary: {
-              main: "#0093E7",
-              dark: "#404040",
-              light: "#FFFFFF",
+              main: "#088178",
+              dark: "#046963",
+              light: "#08817833",
             },
             secondary: {
-              main: "#0076BB",
-              light: "#F4F4F4",
-              dark: "#FFFFFF",
+              main: "#6c757d",
+              light: "#adb5bd",
+              dark: "#e9ecee",
             },
             text: {
-              primary: "#404040",
-              secondary: "#FFFFFF",
+              primary: "#383e50",
+              secondary: "#4f5d77",
             },
             background: {
-              default: "#F4F4F4",
+              default: "#f8f9fa",
+              paper: "#fff",
             },
             error: {
-              main: "#ef5350",
-              dark: "#FF4133",
+              main: "#f46a6a",
+              light: "#f46a6a2e",
             },
             success: {
-              main: "#4CAF50",
+              main: "#34c38f",
+              light: "#34c38f2e",
+            },
+            warning: {
+              main: "#f1b44c",
+              light: "#f1b44c2e",
             },
           }
         : {
             // palette values for dark mode
             primary: {
-              main: "#0093E7",
-              dark: "#FFFFFF",
-              light: "#404040",
+              main: "#088178",
+              dark: "#046963",
+              light: "#08817833",
             },
             secondary: {
-              main: "#0076BB",
-              light: "#303030",
-              dark: "#FFFFFF",
+              main: "#383e50",
+              light: "#adb5bdb3",
+              dark: "#383e50",
             },
             text: {
-              primary: "#FFFFFF",
-              secondary: "#404040",
+              primary: "#f6f6f6",
+              secondary: "#f8f9fa",
             },
             background: {
-              default: "#303030",
+              default: "#222736",
+              paper: "#2f3446",
             },
             error: {
-              main: "#ef5350",
-              dark: "#FF4133",
+              main: "#f46a6a",
+              light: "#f46a6a2e",
             },
             success: {
-              main: "#4CAF50",
+              main: "#34c38f",
+              light: "#34c38f2e",
+            },
+            warning: {
+              main: "#f1b44c",
+              light: "#f1b44c2e",
             },
           }),
     },
     additionalColors: {
       ...(mode === "light"
         ? {
-            lightGrey: "#9EC6D8",
-            primaryTranslucent: "#0093e766",
-            primaryBlack: "rgba(255, 255, 255, 1)",
-            secondaryBlack: "rgba(0, 0, 0, 0.12)",
+            lightGrey: "#f4f5f9",
+            darkGrey: "#292f46",
+            greyWhite: "#495057",
+            white: "#141432",
           }
         : {
             lightGrey: "#9EC6D8",
-            primaryTranslucent: "#0093e766",
-            primaryBlack: "rgba(0, 0, 0, 0.24)",
-            secondaryBlack: "rgba(0, 0, 0, 0.26)",
+            darkGrey: "#32394e",
+            greyWhite: "#ccc",
+            white: "#fff",
           }),
     },
     borderRadius: {
-      radius1: "8px",
-      radius2: "16px",
-      radius3: "32px",
+      radius1: "4px",
+      radius2: "10px",
+      // radius3: "32px",
     },
     height: {
-      barHeight: "58px",
-      tabHeight: "43px",
+      barHeight: "72px",
+      tabHeight: "72px",
     },
     shape: {
-      borderRadius: 16,
+      borderRadius: 10,
     },
     shadow: {
-      boxShadow: "0px 4px 48px rgba(0, 0, 0, 0.2)",
+      boxShadow: "0 0.75rem 1.5rem rgb(18 38 63 / 3%)",
     },
-    
   });
 
   theme = createTheme(theme, {
@@ -122,8 +133,8 @@ export let getDesignTokens = (mode: PaletteMode) => {
             scrollbarColor: theme.palette.background,
             "&::-webkit-scrollbar, & *::-webkit-scrollbar": {
               backgroundColor: theme.palette.background,
-              width: "8px",
-              height: "8px",
+              width: "7px",
+              height: "7px",
             },
             "&::-webkit-scrollbar-thumb, & *::-webkit-scrollbar-thumb": {
               borderRadius: 8,
@@ -191,12 +202,11 @@ export let getDesignTokens = (mode: PaletteMode) => {
           width: "120px",
           contained: {
             "&:hover": {
-              backgroundColor: theme.palette.secondary.main,
+              backgroundColor: theme.palette.primary.dark,
             },
           },
         },
       },
-
     },
     typography: {
       h1: {
