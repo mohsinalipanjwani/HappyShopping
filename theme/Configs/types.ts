@@ -2,9 +2,9 @@ declare module "@mui/material/styles" {
   interface Theme {
     additionalColors?: {
       lightGrey: string;
-      primaryBlack: string;
-      secondryBlack: string;
-      primaryTranslucent: string;
+      darkGrey: string;
+      greyWhite: string;
+      white: string;
     };
     borderRadius: {
       radius1: string;
@@ -23,9 +23,9 @@ declare module "@mui/material/styles" {
   interface ThemeOptions {
     additionalColors?: {
       lightGrey: string;
-      primaryBlack: string;
-      secondryBlack: string;
-      primaryTranslucent: string;
+      darkGrey: string;
+      greyWhite: string;
+      white: string;
     };
     borderRadius?: {
       radius1?: string;
