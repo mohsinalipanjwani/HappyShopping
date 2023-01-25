@@ -9,7 +9,7 @@ export const BoxWrapper = styled(MuiBox)<BoxProps>(
       alignItems: "center",
       flexDirection: "row",
       margin:theme.spacing(3),
-      height: theme.height.barHeight,
+      height: theme.height.barHeight, 
       justifyContent: "space-between",
       boxShadow: theme.shadow.boxShadow,
       borderRadius: theme.borderRadius.radius1,
