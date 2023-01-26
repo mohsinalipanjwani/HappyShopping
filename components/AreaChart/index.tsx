@@ -68,8 +68,8 @@ const CustomAreaChart: React.FC<IAreaChartProps> = ({
           />
         )}
         <defs>
-          {chartKeys.map((key) => (
-            <linearGradient id={key.id} x1="0" y1="0" x2="0" y2="1">
+          {chartKeys.map((key, index) => (
+            <linearGradient key={index} id={key.id} x1="0" y1="0" x2="0" y2="1">
               <stop offset="5%" stopColor={key.color} stopOpacity={0.8} />
               <stop offset="95%" stopColor={key.color} stopOpacity={0} />
             </linearGradient>
@@ -80,8 +80,9 @@ const CustomAreaChart: React.FC<IAreaChartProps> = ({
         <CartesianGrid strokeDasharray="3 3" />
         {tooltip && <Tooltip />}
 
-        {chartKeys.map((key) => (
+        {chartKeys.map((key, index) => (
           <Area
+            key={index}
             type="monotone"
             dataKey={key.name}
             stroke={key.color}

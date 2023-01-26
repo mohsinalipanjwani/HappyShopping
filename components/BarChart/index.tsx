@@ -69,8 +69,8 @@ const CustomBarChart: React.FC<IBarChartProps> = ({
 
         {tooltip && <Tooltip />}
 
-        {chartKeys.map((key: any) => (
-          <Bar dataKey={key.name} fill={key.color} />
+        {chartKeys.map((key, index) => (
+          <Bar key={index} dataKey={key.name} fill={key.color} />
         ))}
       </BarChart>
     </ResponsiveContainer>
