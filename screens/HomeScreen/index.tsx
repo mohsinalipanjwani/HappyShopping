@@ -4,19 +4,21 @@ import FormattedMessage from "theme/FormattedMessage";
 
 import messages from "./messages";
 import { BoxWrapper } from "./Styled";
+import Sidebar from "components/Sidebar";
 
 const HomeScreen: React.FC = () => {
   return (
     <>
-      <BoxWrapper>
+      <Sidebar />
+      {/* <BoxWrapper>
         <Typography>
           <FormattedMessage {...messages.title} />
-        </Typography>
-        <ThemeSwitcher />
-      </BoxWrapper>
-      <Typography sx={{ ml: 4 }}>
+        </Typography> */}
+      <ThemeSwitcher />
+      {/* </BoxWrapper> */}
+      {/* <Typography sx={{ ml: 4 }}>
         <FormattedMessage {...messages.description} />
-      </Typography>
+      </Typography> */}
     </>
   );
 };

@@ -90,12 +90,20 @@ export let getDesignTokens = (mode: PaletteMode) => {
             darkGrey: "#292f46",
             greyWhite: "#495057",
             white: "#141432",
+            grey: "#f4f5f9",
+            searchIcon: "#adb5bd",
+            searchIconTxt: "#fff",
+            searchIconHov: "#088178",
           }
         : {
             lightGrey: "#9EC6D8",
             darkGrey: "#32394e",
             greyWhite: "#ccc",
             white: "#fff",
+            grey: "#383e50",
+            searchIcon: "#fff",
+            searchIconTxt: "#fff",
+            searchIconHov: "#383e50",
           }),
     },
     borderRadius: {

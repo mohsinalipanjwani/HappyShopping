@@ -5,6 +5,10 @@ declare module "@mui/material/styles" {
       darkGrey: string;
       greyWhite: string;
       white: string;
+      grey:string;
+      searchIcon: string;
+      searchIconTxt:string;
+      searchIconHov:string;
     };
     borderRadius: {
       radius1: string;
@@ -26,6 +30,10 @@ declare module "@mui/material/styles" {
       darkGrey: string;
       greyWhite: string;
       white: string;
+      grey:string;
+      searchIcon: string;
+      searchIconTxt:string;
+      searchIconHov:string;
     };
     borderRadius?: {
       radius1?: string;
