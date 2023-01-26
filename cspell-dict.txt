@@ -2,3 +2,10 @@ eqls
 lefthook
 nocheck
 notistack
+statisticscard
+salechart
+revenuechart
+latestorder
+saletitle
+revenuetitle
+ordertitle

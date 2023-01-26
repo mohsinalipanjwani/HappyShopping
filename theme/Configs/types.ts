@@ -3,7 +3,7 @@ declare module "@mui/material/styles" {
     additionalColors?: {
       lightGrey: string;
       primaryBlack: string;
-      secondryBlack: string;
+      secondaryBlack: string;
       primaryTranslucent: string;
     };
     borderRadius: {
@@ -24,7 +24,7 @@ declare module "@mui/material/styles" {
     additionalColors?: {
       lightGrey: string;
       primaryBlack: string;
-      secondryBlack: string;
+      secondaryBlack: string;
       primaryTranslucent: string;
     };
     borderRadius?: {

@@ -19,7 +19,8 @@
   "include": [
     "next-env.d.ts",
     "**/*.ts",
-    "**/*.tsx",
+    "**/*.tsx", 
+    "screens/DashboardScreen/data.jscreescreens/DashboardScreen/data.js"
   ],
   "exclude": ["node_modules"]
 }

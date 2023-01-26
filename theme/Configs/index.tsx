@@ -69,13 +69,13 @@ export let getDesignTokens = (mode: PaletteMode) => {
             lightGrey: "#9EC6D8",
             primaryTranslucent: "#0093e766",
             primaryBlack: "rgba(255, 255, 255, 1)",
-            secondryBlack: "rgba(0, 0, 0, 0.12)",
+            secondaryBlack: "rgba(0, 0, 0, 0.12)",
           }
         : {
             lightGrey: "#9EC6D8",
             primaryTranslucent: "#0093e766",
             primaryBlack: "rgba(0, 0, 0, 0.24)",
-            secondryBlack: "rgba(0, 0, 0, 0.26)",
+            secondaryBlack: "rgba(0, 0, 0, 0.26)",
           }),
     },
     borderRadius: {
@@ -188,6 +188,7 @@ export let getDesignTokens = (mode: PaletteMode) => {
       },
       MuiButton: {
         styleOverrides: {
+          width: "120px",
           contained: {
             "&:hover": {
               backgroundColor: theme.palette.secondary.main,
