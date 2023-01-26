@@ -1,9 +1,10 @@
 import * as React from 'react';
-import { DataGrid, GridColDef, GridToolbar  } from '@mui/x-data-grid';
+import FormattedMessage from "theme/FormattedMessage";
+import { DataGrid, GridColDef  } from '@mui/x-data-grid';
 import { Paper, Box, Typography, TextField, Autocomplete } from '@mui/material';
 
 import {ButtonWrapper} from "./Styled";
-
+import messages from "./messages";
 
 const columns: GridColDef[] = [
   { field: 'id', headerName: 'Order ID', width: 90 },
@@ -12,35 +13,30 @@ const columns: GridColDef[] = [
     headerName: 'Billing Name',
     minWidth: 150, 
     flex: 1,
-    editable: true,
   },
   {
     field: 'date',
     headerName: 'Date',
     minWidth: 150, 
     flex: 1,
-    editable: true,
   },
   {
     field: 'total',
     headerName: 'Total',
     minWidth: 150, 
     flex: 1,
-    editable: true,
   },
   {
     field: 'paymentStatus',
     headerName: 'Payment Status',
     minWidth: 150, 
     flex: 1,
-    editable: true,
   },
   {
     field: 'paymentMethod',
     headerName: 'Payment Method',
     minWidth: 150, 
     flex: 1,
-    editable: true,
   },
   {
     field: 'viewDetail',
@@ -52,7 +48,7 @@ const columns: GridColDef[] = [
       return (
           <strong>
               <ButtonWrapper>
-                  View Details
+                <FormattedMessage {...messages.viewButton} />
               </ButtonWrapper>
           </strong>
       )
@@ -125,8 +121,6 @@ const LatestOrder = ({title}:any) =>  {
         rowsPerPageOptions={[5]}
         checkboxSelection
         disableSelectionOnClick
-        // components={{ Toolbar: GridToolbar }}
-        // componentsProps={{ ...componentsProps, baseSelect: { native: false }, }}
         experimentalFeatures={{ newEditingApi: true }}
       />
       </Box>

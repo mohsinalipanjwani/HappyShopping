@@ -1,12 +1,12 @@
 import FormattedMessage from "theme/FormattedMessage";
-import { Paper, Box, Grid, Typography } from "@mui/material";
+import { Box, Grid, Typography } from "@mui/material";
 
 import messages from "./messages";
-import StatisticsCard from "./statisticscard";
-import SaleChart from "./salechart";
-import RevenueChart from "./revenuechart";
-import LatestOrder from "./latestorder";
-import { cardData, revenueChartData, saleChartData } from "./data";
+import StatisticsCard from "./statisticsCard";
+import SaleChart from "./saleChart";
+import RevenueChart from "./revenueChart";
+import LatestOrder from "./latestOrder";
+import { cardData, saleChartData } from "./data";
 
 const DashboardScreen: React.FC = () => {
   return (
@@ -18,7 +18,7 @@ const DashboardScreen: React.FC = () => {
               <FormattedMessage {...messages.title} />
             </Typography>
             <Typography variant="subtitle1" component="h6" mb={3}>
-              <FormattedMessage {...messages.subtitle} />
+              <FormattedMessage {...messages.subTitle} />
             </Typography>
           </Grid>
         </Grid>
@@ -26,21 +26,17 @@ const DashboardScreen: React.FC = () => {
         <Grid container spacing={3}>
           <StatisticsCard data={cardData} />
           <Grid item sm={12} md={8}>
-            <SaleChart
-              title={<FormattedMessage {...messages.saletitle} />}
-              chart={saleChartData}
-            />
+            <SaleChart title={<FormattedMessage {...messages.saleTitle} />} />
           </Grid>
           <Grid item sm={12} md={4}>
             <RevenueChart
-              title={<FormattedMessage {...messages.revenuetitle} />}
-              chart={revenueChartData}
+              title={<FormattedMessage {...messages.revenueTitle} />}
             />
           </Grid>
 
           <Grid item sm={12}>
             <LatestOrder
-              title={<FormattedMessage {...messages.ordertitle} />}
+              title={<FormattedMessage {...messages.orderTitle} />}
             />
           </Grid>
         </Grid>

@@ -13,21 +13,25 @@ export default defineMessages({
     id: `${scope}.title`,
     defaultMessage: "Dashboard",
   },
-  subtitle: {
-    id: `${scope}.subtitle`,
+  subTitle: {
+    id: `${scope}.subTitle`,
     defaultMessage: "Whole data about your business her",
   },
-  saletitle: {
-    id: `${scope}.saletitle`,
+  saleTitle: {
+    id: `${scope}.saleTitle`,
     defaultMessage: "Sale statistics",
   },
-  revenuetitle: {
-    id: `${scope}.revenuetitle`,
+  revenueTitle: {
+    id: `${scope}.revenueTitle`,
     defaultMessage: "Revenue Base on Area",
   },
-  ordertitle: {
-    id: `${scope}.ordertitle`,
+  orderTitle: {
+    id: `${scope}.orderTitle`,
     defaultMessage: "Latest Order",
   },
+  viewButton:{
+    id: `${scope}.viewButton`,
+    defaultMessage: "View Detail",
+  }
  
 });

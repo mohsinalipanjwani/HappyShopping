@@ -20,7 +20,6 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx", 
-    "screens/DashboardScreen/data.jscreescreens/DashboardScreen/data.js"
   ],
   "exclude": ["node_modules"]
 }
