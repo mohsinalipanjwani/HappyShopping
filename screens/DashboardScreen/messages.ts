@@ -29,9 +29,28 @@ export default defineMessages({
     id: `${scope}.orderTitle`,
     defaultMessage: "Latest Order",
   },
-  viewButton:{
-    id: `${scope}.viewButton`,
+  tableButton: {
+    id: `${scope}.tableButton`,
     defaultMessage: "View Detail",
-  }
- 
+  },
+  newsTitle: {
+    id: `${scope}.newsTitle`,
+    defaultMessage: "News Update",
+  },
+  newsSubTitle: {
+    id: `${scope}.newsSubTitle`,
+    defaultMessage: " ",
+  },
+  newsButton: {
+    id: `${scope}.newsButton`,
+    defaultMessage: "View All",
+  },
+  orderTimelineTitle: {
+    id: `${scope}.orderTimelineTitle`,
+    defaultMessage: "Order Timeline",
+  },
+  orderTimelineSubTitle: {
+    id: `${scope}.orderTimelineSubTitle`,
+    defaultMessage: " ",
+  },
 });

@@ -5,7 +5,7 @@ import CustomAreaChart from "components/AreaChart";
 import { saleChartData, saleChartKeys } from "./data";
 
 interface SaleChartProps {
-  title: JSX.Element;
+  title?: JSX.Element | string;
 }
 
 const SaleChart: React.FC<SaleChartProps> = ({ title }) => {

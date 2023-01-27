@@ -13,10 +13,7 @@ import {
 } from "recharts";
 
 interface chartProps {
-  name: string;
-  sales: number;
-  visitors: number;
-  products: number;
+  [key: string]: string | number;
 }
 
 interface chartKeyProps {

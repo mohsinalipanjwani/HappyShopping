@@ -12,11 +12,7 @@ import {
 } from "recharts";
 
 interface chartProps {
-  name: string;
-  us: number;
-  europe: number;
-  asian: number;
-  africa: number;
+  [key: string]: string | number;
 }
 
 interface chartKeyProps {

@@ -5,7 +5,7 @@ import CustomBarChart from "components/BarChart";
 import { revenueChartData, revenueChartKeys } from "./data";
 
 interface RevenueChartProps {
-  title: JSX.Element;
+  title?: JSX.Element | string;
 }
 
 const RevenueChart: React.FC<RevenueChartProps> = ({ title }) => {

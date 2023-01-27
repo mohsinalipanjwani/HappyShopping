@@ -7,6 +7,8 @@ interface dataProps {
   count: string;
   description: string;
   icon: JSX.Element;
+  backgroundColor: string;
+  color: string;
 }
 interface StatisticsCardProps {
   data: dataProps[];
@@ -15,13 +17,14 @@ interface StatisticsCardProps {
 const StatisticsCard: React.FC<StatisticsCardProps> = ({ data }) => {
   return (
     <>
-      {data.map((card) => (
+      {data.map((card, index) => (
+
         <Grid item xs={12} sm={6} md={3}>
           <Card>
             <BoxWrapper>
-              <Grid container alignItems="center">
+              <Grid container spacing={1}>
                 <Grid item>
-                  <IconWrapper>{card.icon}</IconWrapper>
+                  <IconWrapper sx={{ backgroundColor: card.backgroundColor, color: card.color}}>{card.icon}</IconWrapper>
                 </Grid>
                 <Grid item xs={8}>
                   <Box>
@@ -29,7 +32,7 @@ const StatisticsCard: React.FC<StatisticsCardProps> = ({ data }) => {
                       {card.title}
                     </Typography>
 
-                    <Typography variant="h6" component="h5">
+                    <Typography variant="h6" component="h3">
                       {card.count}
                     </Typography>
 

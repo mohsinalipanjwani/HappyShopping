@@ -15,3 +15,19 @@ export const NEXT_PUBLIC_FIREBASE_APP_ID =
   export const AUTH_LOGIN_URL = process.env.NEXT_PUBLIC_AUTH_LOGIN_URL;
 
 export const PUBLIC_API_URL = process.env.NEXT_PUBLIC_API_URL;
+
+
+export const Success = {
+  backgroundColor: "#34c38f2e",
+  color: "#34c38f",
+}
+export const Error = {
+  backgroundColor: "#f46a6a2e",
+  color: "#f46a6a",
+}
+
+export const Warning = {
+  backgroundColor: "#f1b44c2e",
+  color: "#f1b44c",
+}
+
