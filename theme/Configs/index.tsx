@@ -73,14 +73,14 @@ export let getDesignTokens = (mode: PaletteMode) => {
               main: "#f1b44c",
               light: "#f1b44c2e",
             },
-            orange:{
+            orange: {
               main: "#FD8E1C",
               light: "#FFE8D0",
             },
-            blue:{
+            blue: {
               light: "#CFF4E8",
               main: "#0DCAF0",
-            }
+            },
           }),
     },
     additionalColors: {
@@ -91,14 +91,13 @@ export let getDesignTokens = (mode: PaletteMode) => {
             greyWhite: "#495057",
             white: "#141432",
           }
-          : {
+        : {
             lightGrey: "#9EC6D8",
             darkGrey: "#32394e",
             greyWhite: "#ccc",
             white: "#fff",
           }),
-
-      },
+    },
     borderRadius: {
       radius1: "4px",
       radius2: "10px",
@@ -216,29 +215,36 @@ export let getDesignTokens = (mode: PaletteMode) => {
           },
         },
       },
+      // MuiFormLabel: {
+      //   styleOverrides: {
+      //     fontSize: "18px"
+      //   },
+      // },
       MuiDataGrid: {
         styleOverrides: {
           root: {
             border: "0",
-            '& .MuiDataGrid-columnHeaders ':{
-              borderRadius: "0",
-              backgroundColor: theme.palette.background.default
+            '&.MuiDataGrid-root .MuiDataGrid-cell:focus': {
+                outline: 'none',
             },
-            '& .MuiDataGrid-footerContainer': {
+            "& .MuiDataGrid-columnHeaders ": {
+              borderRadius: "0",
+              backgroundColor: theme.palette.background.default,
+            },
+            "& .MuiDataGrid-footerContainer": {
               border: "0",
             },
-          }
-        }
-    },
+          },
+        },
+      },
       MuiPaper: {
         styleOverrides: {
           // Name of the slot
           root: {
             // Some CSS
             boxShadow: "none",
-            border: "1px solid rgba(0,0,0,0.05)"
+            border: "1px solid rgba(0,0,0,0.05)",
           },
-          
         },
       },
     },

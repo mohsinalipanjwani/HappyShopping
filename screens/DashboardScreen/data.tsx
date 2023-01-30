@@ -9,7 +9,7 @@ export const cardData = [
     title: "Revenue",
     count: "$13,456.5",
     description: "Shipping fees are not included",
-    icon: <AttachMoneyIcon sx={{color: "#088178"}} />,
+    icon: <AttachMoneyIcon sx={{ color: "#088178" }} />,
     backgroundColor: "#CEE6E4",
     color: "#1B8178",
   },

@@ -3,3 +3,4 @@ lefthook
 nocheck
 notistack
 Formik
+LOCALSTORAGE

@@ -6,15 +6,13 @@ export const BoxWrapper = styled(MuiBox)<BoxProps>(
   ({ theme }) =>
     ({
       display: "flex",
-      padding:theme.spacing(15, 0),
+      padding: theme.spacing(15, 0),
       alignItems: "center",
       flexDirection: "row",
       height: "100vh", //theme.height.barHeight
       justifyContent: "center",
-
     } as any),
 ) as (props: BoxProps) => JSX.Element;
-
 
 export const ButtonWrapper = styled(Button)<ButtonProps>(
   ({ theme }) =>
@@ -31,9 +29,6 @@ export const ButtonWrapper = styled(Button)<ButtonProps>(
       overflow: "hidden",
       borderRadius: theme.shape.borderRadius,
       textTransform: "capitalize",
-      width: "100%"
-
+      width: "100%",
     } as any),
 ) as (props: ButtonProps) => JSX.Element;
-
-

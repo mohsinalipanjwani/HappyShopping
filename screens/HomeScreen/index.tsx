@@ -1,6 +1,6 @@
-import FormattedMessage from "theme/FormattedMessage";
-import ThemeSwitcher from "components/ThemeSwitch";
 import Typography from "@mui/material/Typography";
+import ThemeSwitcher from "components/ThemeSwitch";
+import FormattedMessage from "theme/FormattedMessage";
 
 import messages from "./messages";
 import { BoxWrapper } from "./Styled";
