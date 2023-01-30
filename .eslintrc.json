@@ -1,6 +1,6 @@
 {
   "extends": ["next/core-web-vitals", "plugin:prettier/recommended"],
-  "plugins": ["prettier"],
+  // "plugins": ["prettier"],
   "rules": {
     "import/order": [
       "error",
@@ -44,7 +44,7 @@
     "prettier/prettier": [
       "error",
       {
-        "endOfLine": "crlf"
+        "endOfLine": "auto"
       }
     ],
     // orders the items within a multiple member import declaration, ignores declarations because import/order sorts them
