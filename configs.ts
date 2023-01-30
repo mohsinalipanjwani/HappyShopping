@@ -29,3 +29,4 @@ export const Warning = {
   backgroundColor: "#f1b44c2e",
   color: "#f1b44c",
 };
+export const LOGO = "/logo.svg";

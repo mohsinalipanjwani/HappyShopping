@@ -4,12 +4,12 @@ import FormattedMessage from "theme/FormattedMessage";
 
 import messages from "./messages";
 import { BoxWrapper } from "./Styled";
-import Sidebar from "components/Sidebar";
+import PageLayout from "components/PageLayout";
 
 const HomeScreen: React.FC = () => {
   return (
     <>
-      <Sidebar />
+      <PageLayout />
       {/* <BoxWrapper>
         <Typography>
           <FormattedMessage {...messages.title} />
