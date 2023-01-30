@@ -43,18 +43,18 @@ export default defineMessages({
     defaultMessage: "Forgot password?",
   },
 
-  signin: {
-    id: `${scope}.signin`,
+  signIn: {
+    id: `${scope}.signIn`,
     defaultMessage: "Sign In",
   },
  
-  textSignup: {
-    id: `${scope}.textSignup`,
+  textSignUp: {
+    id: `${scope}.textSignUp`,
     defaultMessage: "Don’t have an account?",
   },
 
-  signup: {
-    id: `${scope}.signup`,
+  signUp: {
+    id: `${scope}.signUp`,
     defaultMessage: "Sign up now",
   },
  

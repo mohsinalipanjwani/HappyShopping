@@ -39,8 +39,9 @@ const NewsUpdate: React.FC<NewsUpdateProps> = ({
       <CardHeader title={title} subheader={subheader} />
 
       <Stack spacing={3} sx={{ p: 3, pr: 0 }}>
-        {list.map((news) => (
+        {list.map((news, index) => (
           <NewsFeed
+            key={index}
             title={news.title}
             image={news.image}
             description={news.description}

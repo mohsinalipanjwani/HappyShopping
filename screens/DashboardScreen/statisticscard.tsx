@@ -18,8 +18,7 @@ const StatisticsCard: React.FC<StatisticsCardProps> = ({ data }) => {
   return (
     <>
       {data.map((card, index) => (
-
-        <Grid item xs={12} sm={6} md={3}>
+        <Grid item xs={12} sm={6} md={3} key={index}>
           <Card>
             <BoxWrapper>
               <Grid container spacing={1}>

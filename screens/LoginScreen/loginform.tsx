@@ -100,7 +100,7 @@ const LoginForm = () => {
           type="submit"
           variant="contained"
         >
-          <FormattedMessage {...messages.signin} />
+          <FormattedMessage {...messages.signIn} />
         </ButtonWrapper>
       </Box>
 
@@ -112,10 +112,10 @@ const LoginForm = () => {
         }}
       >
         <Link href="#" underline="none">
-          <FormattedMessage {...messages.textSignup} />
+          <FormattedMessage {...messages.textSignUp} />
         </Link>
         <Link href="/register" underline="none">
-          <FormattedMessage {...messages.signup} />
+          <FormattedMessage {...messages.signUp} />
         </Link>
       </Box>
     </form>
