@@ -17,5 +17,4 @@ export default defineMessages({
     id: `${scope}.description`,
     defaultMessage: "This is the basic starter project for react",
   },
- 
 });

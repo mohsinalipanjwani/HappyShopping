@@ -89,4 +89,4 @@
 //   }
 // }
 
-export namespace Users{}
+export namespace Users {}

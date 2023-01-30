@@ -7,7 +7,7 @@ const acceptLanguages = ["en"];
 const defaultLocale = acceptLanguages[0];
 
 export const getLocale = async (
-  ctx: NextPageContext | any
+  ctx: NextPageContext | any,
 ): Promise<string> => {
   try {
     const cookieLocale = nextCookie(ctx).locale;

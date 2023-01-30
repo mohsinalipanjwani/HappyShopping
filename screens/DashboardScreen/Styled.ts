@@ -8,21 +8,19 @@ export const BoxWrapper = styled(MuiBox)<BoxProps>(
       display: "flex",
       alignItems: "center",
       flexDirection: "row",
-      padding:theme.spacing(3),
+      padding: theme.spacing(3),
       justifyContent: "space-between",
       boxShadow: theme.shadow.boxShadow,
       borderRadius: theme.borderRadius.radius1,
     } as any),
 ) as (props: BoxProps) => JSX.Element;
 
-
-
 export const IconWrapper = styled(MuiBox)<BoxProps>(
   ({ theme }) =>
     ({
       width: "48px",
       height: "48px",
-      lineHeight: '55px',
+      lineHeight: "55px",
       fontSize: "22px",
       fontWidth: "600",
       textAlign: "center",
@@ -31,7 +29,6 @@ export const IconWrapper = styled(MuiBox)<BoxProps>(
       boxShadow: theme.shadow.boxShadow,
     } as any),
 ) as (props: BoxProps) => JSX.Element;
-
 
 export const ButtonWrapper = styled(Button)<ButtonProps>(
   ({ theme }) =>

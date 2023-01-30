@@ -5,11 +5,7 @@
     "import/order": [
       "error",
       {
-        "groups": [
-          "builtin",
-          "external",
-          "internal"
-        ],
+        "groups": ["builtin", "external", "internal"],
         "pathGroups": [
           {
             "pattern": "jest",
@@ -37,10 +33,7 @@
             "position": "before"
           }
         ],
-        "pathGroupsExcludedImportTypes": [
-          "react",
-          "next"
-        ],
+        "pathGroupsExcludedImportTypes": ["react", "next"],
         "newlines-between": "ignore",
         "alphabetize": {
           "order": "asc",
@@ -48,10 +41,11 @@
         }
       }
     ],
-    "prettier/prettier": 
-    [ "error",
+    "prettier/prettier": [
+      "error",
       {
-        "endOfLine": "crlf"}
+        "endOfLine": "crlf"
+      }
     ],
     // orders the items within a multiple member import declaration, ignores declarations because import/order sorts them
     "sort-imports": [
@@ -63,10 +57,7 @@
     "no-restricted-imports": [
       "error",
       {
-        "patterns": [
-          "@mui/*/*/*",
-          "!@mui/material/test-utils/*"
-        ]
+        "patterns": ["@mui/*/*/*", "!@mui/material/test-utils/*"]
       }
     ]
   }

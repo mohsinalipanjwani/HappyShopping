@@ -47,7 +47,7 @@ export default defineMessages({
     id: `${scope}.signIn`,
     defaultMessage: "Sign In",
   },
- 
+
   textSignUp: {
     id: `${scope}.textSignUp`,
     defaultMessage: "Don’t have an account?",
@@ -57,6 +57,4 @@ export default defineMessages({
     id: `${scope}.signUp`,
     defaultMessage: "Sign up now",
   },
- 
-
 });
