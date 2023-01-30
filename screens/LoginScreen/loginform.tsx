@@ -1,25 +1,22 @@
 import React from "react";
-import { useFormik } from "formik";
-import * as Yup from 'yup'; 
 import {
-  Grid,
-  TextField,
-  FormControlLabel,
-  Checkbox,
-  Link,
   Box,
+  Checkbox,
+  FormControlLabel,
+  Grid,
+  Link,
+  TextField,
 } from "@mui/material";
+import { useFormik } from "formik";
+import * as Yup from "yup";
 import FormattedMessage, { useFormattedMessage } from "theme/FormattedMessage";
-import { ButtonWrapper } from "./Styled";
 import messages from "./messages";
+import { ButtonWrapper } from "./Styled";
 
-
-
-const validationSchema = Yup.object().shape({    
-    email: Yup.string().required().email().label("Email"),
-    password: Yup.string().required().min(6).label("Password")
+const validationSchema = Yup.object().shape({
+  email: Yup.string().required().email().label("Email"),
+  password: Yup.string().required().min(6).label("Password"),
 });
-
 
 const LoginForm = () => {
   // use formik
@@ -35,8 +32,8 @@ const LoginForm = () => {
   // handleResetPass
   const handleResetPass = (email: string) => {};
 
-  const emailPlaceholder = useFormattedMessage(messages.emailPlaceholder)
-  const passwordPlaceholder = useFormattedMessage(messages.passwordPlaceholder)
+  const emailPlaceholder = useFormattedMessage(messages.emailPlaceholder);
+  const passwordPlaceholder = useFormattedMessage(messages.passwordPlaceholder);
 
   return (
     <form onSubmit={handleSubmit}>
@@ -52,7 +49,7 @@ const LoginForm = () => {
             placeholder={emailPlaceholder}
             error={touched.email && Boolean(errors.email)}
             helperText={touched.email && errors.email}
-            autoComplete='off'
+            autoComplete="off"
           />
         </Grid>
 
@@ -67,7 +64,7 @@ const LoginForm = () => {
             placeholder={passwordPlaceholder}
             error={touched.password && Boolean(errors.password)}
             helperText={touched.password && errors.password}
-            autoComplete='off'
+            autoComplete="off"
           />
         </Grid>
       </Grid>
@@ -81,7 +78,12 @@ const LoginForm = () => {
       >
         <FormControlLabel
           control={
-            <Checkbox id="Remember" name="fav_language" value="Remember" color="secondary"  />
+            <Checkbox
+              id="Remember"
+              name="fav_language"
+              value="Remember"
+              color="secondary"
+            />
           }
           label={<FormattedMessage {...messages.rememberLabel} />}
         />
@@ -96,10 +98,7 @@ const LoginForm = () => {
       </Box>
 
       <Box>
-        <ButtonWrapper
-          type="submit"
-          variant="contained"
-        >
+        <ButtonWrapper type="submit" variant="contained">
           <FormattedMessage {...messages.signIn} />
         </ButtonWrapper>
       </Box>

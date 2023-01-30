@@ -1,15 +1,14 @@
-import FormattedMessage from "theme/FormattedMessage";
 import { Box, Grid, Typography } from "@mui/material";
-
-import messages from "./messages";
-import StatisticsCard from "./statisticsCard";
-import SaleChart from "./saleChart";
-import RevenueChart from "./revenueChart";
-import LatestOrder from "./latestOrder";
-import NewsUpdate from "./newsUpdate";
-import OrderTimeline from "./orderTimeline";
+import FormattedMessage from "theme/FormattedMessage";
 
 import { cardData, newsData, orderData } from "./data";
+import LatestOrder from "./LatestOrder";
+import messages from "./messages";
+import NewsUpdate from "./NewsUpdate";
+import OrderTimeline from "./OrderTimeline";
+import RevenueChart from "./RevenueChart";
+import SaleChart from "./SaleChart";
+import StatisticsCard from "./StatisticsCard";
 
 const DashboardScreen: React.FC = () => {
   return (

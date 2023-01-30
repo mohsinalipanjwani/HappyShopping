@@ -1,14 +1,14 @@
 // @mui
-import PropTypes from "prop-types";
-import { Card, Typography, CardHeader, CardContent } from "@mui/material";
 import {
   Timeline,
+  TimelineConnector,
+  TimelineContent,
   TimelineDot,
   TimelineItem,
-  TimelineContent,
   TimelineSeparator,
-  TimelineConnector,
 } from "@mui/lab";
+import { Card, CardContent, CardHeader, Typography } from "@mui/material";
+import PropTypes from "prop-types";
 
 interface listProps {
   id: number;
@@ -39,7 +39,11 @@ const OrderTimeline: React.FC<OrderTimelineProps> = ({
           },
         }}
       >
-        <Timeline>
+        <Timeline
+          nonce={undefined}
+          onResize={undefined}
+          onResizeCapture={undefined}
+        >
           {list.map((item, index) => (
             <OrderItem
               key={item.id}

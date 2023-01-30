@@ -1,30 +1,32 @@
 import * as React from "react";
-import FormattedMessage from "theme/FormattedMessage";
-import { DataGrid, GridColDef } from "@mui/x-data-grid";
 import {
-  Paper,
-  Box,
-  Grid,
-  Typography,
-  TextField,
   Autocomplete,
-  Chip
+  Box,
+  Chip,
+  Grid,
+  Paper,
+  TextField,
+  Typography,
 } from "@mui/material";
-import CreditCardIcon from '@mui/icons-material/CreditCard';
-import { ButtonWrapper } from "./Styled";
-import { Success, Error, Warning } from "configs";
+import { DataGrid, GridColDef } from "@mui/x-data-grid";
+import CreditCardIcon from "@mui/icons-material/CreditCard";
+import { Error, Success, Warning } from "configs";
+import FormattedMessage from "theme/FormattedMessage";
 import messages from "./messages";
+import { ButtonWrapper } from "./Styled";
 
 const columns: GridColDef[] = [
-  { 
-    field: "id", 
+  {
+    field: "id",
     headerName: "Order ID",
     width: 90,
     renderCell: (params) => {
       return (
-          <Typography sx={{color: (theme) => theme.palette.primary.main, fontWeight: 600}} >
-            {params.value}
-          </Typography>
+        <Typography
+          sx={{ color: (theme) => theme.palette.primary.main, fontWeight: 600 }}
+        >
+          {params.value}
+        </Typography>
       );
     },
   },
@@ -53,14 +55,12 @@ const columns: GridColDef[] = [
     flex: 1,
     renderCell: (params) => {
       let style = Error;
-      if(params.value == "Paid"){
-        style = Success
-      } else if(params.value == "Refund") { 
-        style = Warning
+      if (params.value == "Paid") {
+        style = Success;
+      } else if (params.value == "Refund") {
+        style = Warning;
       }
-      return (
-          <Chip label={params.value} sx={style} />
-      );
+      return <Chip label={params.value} sx={style} />;
     },
   },
   {
@@ -70,15 +70,16 @@ const columns: GridColDef[] = [
     flex: 1,
     renderCell: (params) => {
       return (
-          <>
-            <CreditCardIcon
-              sx={{
-                color: (theme) => theme.palette.secondary.light,
-                fontSize: "20px",
-                marginRight: "5px"
-              }}
-            /> {params.value}
-          </>
+        <>
+          <CreditCardIcon
+            sx={{
+              color: (theme) => theme.palette.secondary.light,
+              fontSize: "20px",
+              marginRight: "5px",
+            }}
+          />{" "}
+          {params.value}
+        </>
       );
     },
   },
@@ -90,9 +91,9 @@ const columns: GridColDef[] = [
     flex: 1,
     renderCell: (params) => {
       return (
-          <ButtonWrapper variant="contained"  href="#outlined-buttons">
-            <FormattedMessage {...messages.tableButton} />
-          </ButtonWrapper>
+        <ButtonWrapper variant="contained" href="#outlined-buttons">
+          <FormattedMessage {...messages.tableButton} />
+        </ButtonWrapper>
       );
     },
   },

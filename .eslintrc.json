@@ -48,6 +48,11 @@
         }
       }
     ],
+    "prettier/prettier": 
+    [ "error",
+      {
+        "endOfLine": "crlf"}
+    ],
     // orders the items within a multiple member import declaration, ignores declarations because import/order sorts them
     "sort-imports": [
       "error",

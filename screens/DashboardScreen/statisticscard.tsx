@@ -1,4 +1,4 @@
-import { Box, Card, Typography, Grid } from "@mui/material";
+import { Box, Card, Grid, Typography } from "@mui/material";
 import { BoxWrapper, IconWrapper } from "./Styled";
 
 interface dataProps {
@@ -23,7 +23,14 @@ const StatisticsCard: React.FC<StatisticsCardProps> = ({ data }) => {
             <BoxWrapper>
               <Grid container spacing={1}>
                 <Grid item>
-                  <IconWrapper sx={{ backgroundColor: card.backgroundColor, color: card.color}}>{card.icon}</IconWrapper>
+                  <IconWrapper
+                    sx={{
+                      backgroundColor: card.backgroundColor,
+                      color: card.color,
+                    }}
+                  >
+                    {card.icon}
+                  </IconWrapper>
                 </Grid>
                 <Grid item xs={8}>
                   <Box>
