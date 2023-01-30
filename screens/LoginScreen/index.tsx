@@ -2,7 +2,7 @@ import React from "react";
 import FormattedMessage from "theme/FormattedMessage";
 import {Box, Grid, Typography} from "@mui/material";
 import { BoxWrapper } from "./Styled";
-import LoginForm from "./loginform";
+import LoginForm from "./loginForm";
 import messages from "./messages";
 
 
@@ -10,12 +10,12 @@ import messages from "./messages";
 const LoginScreen: React.FC = () => {
     return (
         <Grid container>
-          <Grid item xs={6}>
+          <Grid item xs={6} sx={{ display: { xs: 'none', md: 'block' } }}>
               <BoxWrapper sx={{backgroundColor: (theme) => theme.palette.primary.main}}>
                   <img src="https://collax-react.netlify.app/assets/img/contact/login.png" alt="" />
               </BoxWrapper>
           </Grid>
-          <Grid item xs={6}>
+          <Grid item xs={12} md={6}>
             <BoxWrapper>
               <Box sx={{width: "80%"}}>
                 <Box sx={{ textAlign: "center" }}>
