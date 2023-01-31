@@ -215,10 +215,19 @@ export let getDesignTokens = (mode: PaletteMode) => {
           },
         },
       },
+      // MuiFormLabel: {
+      //   styleOverrides: {
+      //     fontSize: "18px"
+      //   },
+      // },
       MuiDataGrid: {
         styleOverrides: {
           root: {
             border: "0",
+            '&.MuiDataGrid-root .MuiDataGrid-cell:focus': {
+                outline: 'none',
+            },
+
             "& .MuiDataGrid-columnHeaders ": {
               borderRadius: "0",
               backgroundColor: theme.palette.background.default,
