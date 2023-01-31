@@ -227,6 +227,7 @@ export let getDesignTokens = (mode: PaletteMode) => {
             '&.MuiDataGrid-root .MuiDataGrid-cell:focus': {
                 outline: 'none',
             },
+
             "& .MuiDataGrid-columnHeaders ": {
               borderRadius: "0",
               backgroundColor: theme.palette.background.default,
