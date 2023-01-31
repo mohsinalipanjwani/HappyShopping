@@ -5,9 +5,7 @@ import DashboardScreen from "screens/DashboardScreen";
 const Dashboard: NextPage = () => {
   return (
     <>
-      <PageLayout>
-        <DashboardScreen />
-      </PageLayout>
+      <DashboardScreen />
     </>
   );
 };
