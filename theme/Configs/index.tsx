@@ -9,94 +9,102 @@ export let getDesignTokens = (mode: PaletteMode) => {
       mode,
       ...(mode === "light"
         ? {
-            // palette values for light mode
-            primary: {
-              main: "#088178",
-              dark: "#046963",
-              light: "#08817833",
-            },
-            secondary: {
-              main: "#6c757d",
-              light: "#adb5bd",
-              dark: "#e9ecee",
-            },
-            text: {
-              primary: "#383e50",
-              secondary: "#4f5d77",
-            },
-            background: {
-              default: "#f8f9fa",
-              paper: "#fff",
-            },
-            error: {
-              main: "#f46a6a",
-              light: "#f46a6a2e",
-            },
-            success: {
-              main: "#34c38f",
-              light: "#34c38f2e",
-            },
-            warning: {
-              main: "#f1b44c",
-              light: "#f1b44c2e",
-            },
-          }
+          // palette values for light mode
+          primary: {
+            main: "#088178",
+            dark: "#046963",
+            light: "#08817833",
+          },
+          secondary: {
+            main: "#6c757d",
+            light: "#adb5bd",
+            dark: "#e9ecee",
+          },
+          text: {
+            primary: "#383e50",
+            secondary: "#4f5d77",
+          },
+          background: {
+            default: "#f8f9fa",
+            paper: "#fff",
+          },
+          error: {
+            main: "#f46a6a",
+            light: "#f46a6a2e",
+          },
+          success: {
+            main: "#34c38f",
+            light: "#34c38f2e",
+          },
+          warning: {
+            main: "#f1b44c",
+            light: "#f1b44c2e",
+          },
+        }
         : {
-            // palette values for dark mode
-            primary: {
-              main: "#088178",
-              dark: "#046963",
-              light: "#08817833",
-            },
-            secondary: {
-              main: "#383e50",
-              light: "#adb5bdb3",
-              dark: "#383e50",
-            },
-            text: {
-              primary: "#f6f6f6",
-              secondary: "#f8f9fa",
-            },
-            background: {
-              default: "#222736",
-              paper: "#2f3446",
-            },
-            error: {
-              main: "#f46a6a",
-              light: "#f46a6a2e",
-            },
-            success: {
-              main: "#34c38f",
-              light: "#34c38f2e",
-            },
-            warning: {
-              main: "#f1b44c",
-              light: "#f1b44c2e",
-            },
-            orange: {
-              main: "#FD8E1C",
-              light: "#FFE8D0",
-            },
-            blue: {
-              light: "#CFF4E8",
-              main: "#0DCAF0",
-            },
-          }),
+          // palette values for dark mode
+          primary: {
+            main: "#088178",
+            dark: "#046963",
+            light: "#08817833",
+          },
+          secondary: {
+            main: "#383e50",
+            light: "#adb5bdb3",
+            dark: "#383e50",
+          },
+          text: {
+            primary: "#f6f6f6",
+            secondary: "#f8f9fa",
+          },
+          background: {
+            default: "#222736",
+            paper: "#2f3446",
+          },
+          error: {
+            main: "#f46a6a",
+            light: "#f46a6a2e",
+          },
+          success: {
+            main: "#34c38f",
+            light: "#34c38f2e",
+          },
+          warning: {
+            main: "#f1b44c",
+            light: "#f1b44c2e",
+          },
+          orange: {
+            main: "#FD8E1C",
+            light: "#FFE8D0",
+          },
+          blue: {
+            light: "#CFF4E8",
+            main: "#0DCAF0",
+          },
+        }),
     },
     additionalColors: {
       ...(mode === "light"
         ? {
-            lightGrey: "#f4f5f9",
-            darkGrey: "#292f46",
-            greyWhite: "#495057",
-            white: "#141432",
-          }
+          lightGrey: "#f4f5f9",
+          darkGrey: "#292f46",
+          greyWhite: "#495057",
+          white: "#141432",
+          grey: "#f4f5f9",
+          searchIcon: "#adb5bd",
+          searchIconTxt: "#fff",
+          searchIconHov: "#088178",
+        }
         : {
-            lightGrey: "#9EC6D8",
-            darkGrey: "#32394e",
-            greyWhite: "#ccc",
-            white: "#fff",
-          }),
+          lightGrey: "#9EC6D8",
+          darkGrey: "#32394e",
+          greyWhite: "#ccc",
+          white: "#fff",
+          grey: "#383e50",
+          searchIcon: "#fff",
+          searchIconTxt: "#fff",
+          searchIconHov: "#383e50",
+        }),
     },
     borderRadius: {
       radius1: "4px",
@@ -149,17 +157,17 @@ export let getDesignTokens = (mode: PaletteMode) => {
               backgroundColor: theme.palette.primary.dark,
             },
             "&::-webkit-scrollbar-thumb:focus, & *::-webkit-scrollbar-thumb:focus":
-              {
-                backgroundColor: theme.palette.primary.dark,
-              },
+            {
+              backgroundColor: theme.palette.primary.dark,
+            },
             "&::-webkit-scrollbar-thumb:active, & *::-webkit-scrollbar-thumb:active":
-              {
-                backgroundColor: theme.palette.primary.dark,
-              },
+            {
+              backgroundColor: theme.palette.primary.dark,
+            },
             "&::-webkit-scrollbar-thumb:hover, & *::-webkit-scrollbar-thumb:hover":
-              {
-                backgroundColor: theme.palette.primary.dark,
-              },
+            {
+              backgroundColor: theme.palette.primary.dark,
+            },
           },
         },
       },
@@ -225,9 +233,8 @@ export let getDesignTokens = (mode: PaletteMode) => {
           root: {
             border: "0",
             '&.MuiDataGrid-root .MuiDataGrid-cell:focus': {
-                outline: 'none',
+              outline: 'none',
             },
-
             "& .MuiDataGrid-columnHeaders ": {
               borderRadius: "0",
               backgroundColor: theme.palette.background.default,
