@@ -1,8 +1,8 @@
 import React from "react";
-import { Search, SearchIconWrapper, StyledInputBase } from "./Styled";
 import SearchIcon from "@mui/icons-material/Search";
-import messages from "./messages";
 import FormattedMessage, { useFormattedMessage } from "theme/FormattedMessage";
+import messages from "./messages";
+import { Search, SearchIconWrapper, StyledInputBase } from "./Styled";
 
 const SearchField = () => {
   const searchPlaceholder = useFormattedMessage(messages.placeholder);

@@ -1,7 +1,7 @@
-import { alpha, CSSObject, InputBase, Theme } from "@mui/material";
+import { CSSObject, InputBase, Theme, alpha } from "@mui/material";
+import MuiAppBar, { AppBarProps as MuiAppBarProps } from "@mui/material/AppBar";
 import MuiBox, { BoxProps } from "@mui/material/Box";
 import { styled } from "@mui/material/styles";
-import MuiAppBar, { AppBarProps as MuiAppBarProps } from "@mui/material/AppBar";
 
 const drawerWidth = 300;
 interface AppBarProps extends MuiAppBarProps {

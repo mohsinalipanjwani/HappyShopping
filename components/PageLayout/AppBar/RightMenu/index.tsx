@@ -1,7 +1,7 @@
 import React from "react";
-import ThemeSwitcher from "components/ThemeSwitch";
 import { Avatar, Badge, IconButton } from "@mui/material";
 import NotificationsIcon from "@mui/icons-material/Notifications";
+import ThemeSwitcher from "components/ThemeSwitch";
 
 const RightMenu = () => {
   return (

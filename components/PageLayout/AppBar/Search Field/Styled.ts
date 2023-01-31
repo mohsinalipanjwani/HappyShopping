@@ -1,7 +1,7 @@
-import { styled } from "@mui/material/styles";
+import { CSSObject, InputBase, Theme, alpha } from "@mui/material";
 import MuiAppBar, { AppBarProps as MuiAppBarProps } from "@mui/material/AppBar";
-import { alpha, CSSObject, InputBase, Theme } from "@mui/material";
 import MuiBox, { BoxProps } from "@mui/material/Box";
+import { styled } from "@mui/material/styles";
 
 export const Search = styled(MuiBox)(({ theme }) => ({
   position: "relative",

@@ -1,7 +1,7 @@
 import HomeIcon from "@mui/icons-material/Home";
+import PaidIcon from "@mui/icons-material/Paid";
 import ShoppingBagIcon from "@mui/icons-material/ShoppingBag";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
-import PaidIcon from "@mui/icons-material/Paid";
 const MenuData = [
   {
     title: "Dashboard",

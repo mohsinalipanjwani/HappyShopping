@@ -1,7 +1,7 @@
-import { alpha, CSSObject, InputBase, Theme } from "@mui/material";
+import { CSSObject, InputBase, Theme, alpha } from "@mui/material";
 import MuiBox, { BoxProps } from "@mui/material/Box";
-import { styled } from "@mui/material/styles";
 import MuiDrawer from "@mui/material/Drawer";
+import { styled } from "@mui/material/styles";
 
 const drawerWidth = 300;
 

@@ -1,8 +1,4 @@
 import React from "react";
-import Image from "theme/Image";
-import { LOGO } from "configs";
-import { DrawerHeader } from "./Styled";
-import MenuData from "./navLinks";
 import {
   Box,
   Divider,
@@ -14,6 +10,10 @@ import {
   ListItemText,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
+import { LOGO } from "configs";
+import Image from "theme/Image";
+import MenuData from "./navLinks";
+import { DrawerHeader } from "./Styled";
 
 interface BarComponentProps {
   open?: boolean;
