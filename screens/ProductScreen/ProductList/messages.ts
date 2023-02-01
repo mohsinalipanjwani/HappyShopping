@@ -1,12 +1,12 @@
 /*
- * HomeScreen Messages
+ * ProductScreen Messages
  *
- * This contains all the text for the HomeScreen
+ * This contains all the text for the ProductScreen
  */
 
 import { defineMessages } from "react-intl";
 
-export const scope = "app.screens.HomeScreen";
+export const scope = "app.screens.ProductScreen";
 
 export default defineMessages({
   listTitle: {
@@ -40,20 +40,5 @@ export default defineMessages({
   deleteButton: {
     id: `${scope}.deleteButton`,
     defaultMessage: "Delete",
-  },
-
-
-  // Add Product Page
-  addTitle: {
-    id: `${scope}.addTitle`,
-    defaultMessage: "Add New Product",
-  },
-  publishButton: {
-    id: `${scope}.publishButton`,
-    defaultMessage: "Publish",
-  },
-  draftButton: {
-    id: `${scope}.draftButton`,
-    defaultMessage: "Save to draft",
   },
 });

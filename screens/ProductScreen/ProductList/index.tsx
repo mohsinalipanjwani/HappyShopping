@@ -3,7 +3,7 @@ import { Container, Box, Card, CardContent, Typography } from "@mui/material";
 import FormattedMessage from "theme/FormattedMessage";
 import Filters from "./filters";
 import Lists from "./lists";
-import messages from "../messages";
+import messages from "./messages";
 import { ButtonWrapper } from "theme/Buttons";
 import PageLayout from "components/PageLayout";
 

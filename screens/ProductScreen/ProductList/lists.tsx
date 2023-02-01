@@ -3,9 +3,13 @@ import { DataGrid, GridColDef } from "@mui/x-data-grid";
 import { Box, Typography, Chip } from "@mui/material";
 import ModeEditIcon from '@mui/icons-material/ModeEdit';
 import DeleteIcon from '@mui/icons-material/Delete';
-import { Success, Error, Warning } from "configs";
-import messages from "../messages";
+
+
+import { map } from "configs";
 import { TableButtonWrapper } from "theme/Buttons";
+
+import { rows } from "./data";
+import messages from "./messages";
 
 const columns: GridColDef[] = [
   {
@@ -52,13 +56,8 @@ const columns: GridColDef[] = [
     minWidth: 150,
     flex: 1,
     renderCell: (params) => {
-      let style = Error;
-      if (params.value == "Active") {
-        style = Success;
-      } else if (params.value == "Archived") {
-        style = Warning;
-      }
-      return <Chip label={params.value} sx={style} />;
+      const { text, style } = map[params.value];
+      return <Chip label={text} sx={style} />;
     },
   },
   {
@@ -88,160 +87,6 @@ const columns: GridColDef[] = [
   },
 ];
 
-const rows = [
-  {
-    id: "1",
-    image: "https://picsum.photos/200/300",
-    name: "T-shirt for men medium size",
-    price: "$34.50",
-    status: "Active",
-    date: "02.11.2022",
-  },
-  {
-    id: "2",
-    image: "https://picsum.photos/200/300",
-    name: "T-shirt for men medium size",
-    price: "$34.50",
-    status: "Active",
-    date: "02.11.2022",
-  },
-  {
-    id: "3",
-    image: "https://picsum.photos/200/300",
-    name: "T-shirt for men medium size",
-    price: "$34.50",
-    status: "Archived",
-    date: "02.11.2022",
-  },
-  {
-    id: "4",
-    image: "https://picsum.photos/200/300",
-    name: "T-shirt for men medium size",
-    price: "$34.50",
-    status: "Active",
-    date: "02.11.2022",
-  },
-  {
-    id: "5",
-    image: "https://picsum.photos/200/300",
-    name: "T-shirt for men medium size",
-    price: "$34.50",
-    status: "Active",
-    date: "02.11.2022",
-  }, 
-  {
-    id: "6",
-    image: "https://picsum.photos/200/300",
-    name: "T-shirt for men medium size",
-    price: "$34.50",
-    status: "Archived",
-    date: "02.11.2022",
-  },
-  {
-    id: "7",
-    image: "https://picsum.photos/200/300",
-    name: "T-shirt for men medium size",
-    price: "$34.50",
-    status: "Active",
-    date: "02.11.2022",
-  },
-  {
-    id: "8",
-    image: "https://picsum.photos/200/300",
-    name: "T-shirt for men medium size",
-    price: "$34.50",
-    status: "Disabled",
-    date: "02.11.2022",
-  },
-  {
-    id: "9",
-    image: "https://picsum.photos/200/300",
-    name: "T-shirt for men medium size",
-    price: "$34.50",
-    status: "Active",
-    date: "02.11.2022",
-  }, 
-  {
-    id: "10",
-    image: "https://picsum.photos/200/300",
-    name: "T-shirt for men medium size",
-    price: "$34.50",
-    status: "Active",
-    date: "02.11.2022",
-  },
-  {
-    id: "11",
-    image: "https://picsum.photos/200/300",
-    name: "T-shirt for men medium size",
-    price: "$34.50",
-    status: "Archived",
-    date: "02.11.2022",
-  },
-  {
-    id: "12",
-    image: "https://picsum.photos/200/300",
-    name: "T-shirt for men medium size",
-    price: "$34.50",
-    status: "Archived",
-    date: "02.11.2022",
-  },
-  {
-    id: "12",
-    image: "https://picsum.photos/200/300",
-    name: "T-shirt for men medium size",
-    price: "$34.50",
-    status: "Active",
-    date: "02.11.2022",
-  }, 
-  {
-    id: "13",
-    image: "https://picsum.photos/200/300",
-    name: "T-shirt for men medium size",
-    price: "$34.50",
-    status: "Active",
-    date: "02.11.2022",
-  },
-  {
-    id: "14",
-    image: "https://picsum.photos/200/300",
-    name: "T-shirt for men medium size",
-    price: "$34.50",
-    status: "Active",
-    date: "02.11.2022",
-  },
-  {
-    id: "15",
-    image: "https://picsum.photos/200/300",
-    name: "T-shirt for men medium size",
-    price: "$34.50",
-    status: "Active",
-    date: "02.11.2022",
-  },
-  {
-    id: "16",
-    image: "https://picsum.photos/200/300",
-    name: "T-shirt for men medium size",
-    price: "$34.50",
-    status: "Disabled",
-    date: "02.11.2022",
-  }, 
-  {
-    id: "17",
-    image: "https://picsum.photos/200/300",
-    name: "T-shirt for men medium size",
-    price: "$34.50",
-    status: "Active",
-    date: "02.11.2022",
-  },
-  {
-    id: "18",
-    image: "https://picsum.photos/200/300",
-    name: "T-shirt for men medium size",
-    price: "$34.50",
-    status: "Active",
-    date: "02.11.2022",
-  },
-];
 
 const Lists = () => {
   return (

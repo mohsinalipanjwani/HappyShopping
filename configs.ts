@@ -30,3 +30,20 @@ export const Warning = {
   color: "#f1b44c",
 };
 export const LOGO = "/logo.svg";
+export const UPLOAD = "/upload-img.svg";
+
+
+export const map: any = {
+  active: {
+    text: 'Active',
+    style: Success
+  },
+  archived: {
+    text: 'Archived',
+    style: Warning
+  },
+  disabled: {
+    text: 'Disabled',
+    style: Error
+  }
+};
