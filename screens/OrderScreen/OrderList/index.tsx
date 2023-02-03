@@ -1,13 +1,22 @@
-import { Container, Box, Card, CardContent, Typography } from "@mui/material";
+import {
+  Container,
+  Box,
+  Card,
+  CardContent,
+  Typography,
+  OutlinedInput,
+} from "@mui/material";
 
-import FormattedMessage from "theme/FormattedMessage";
+import FormattedMessage, { useFormattedMessage } from "theme/FormattedMessage";
+import PageLayout from "components/PageLayout";
+
 import Filters from "./filters";
 import Lists from "./lists";
 import messages from "./messages";
-import { ButtonWrapper } from "theme/Buttons";
-import PageLayout from "components/PageLayout";
 
-const ProductList = () => {
+const OrderList = () => {
+  const textPlaceholder = useFormattedMessage(messages.searchIdPlaceholder);
+
   return (
     <PageLayout>
       <Box
@@ -31,19 +40,13 @@ const ProductList = () => {
               <FormattedMessage {...messages.listTitle} />
             </Typography>
             <Box sx={{ m: 1 }}>
-              <ButtonWrapper variant="outlined" sx={{ mr: 1 }}>
-                <FormattedMessage {...messages.exportButton} />
-              </ButtonWrapper>
-              <ButtonWrapper variant="outlined" sx={{ mr: 1 }}>
-                <FormattedMessage {...messages.importButton} />
-              </ButtonWrapper>
-              <ButtonWrapper
-                color="primary"
-                variant="contained"
-                sx={{ width: "150px" }}
-              >
-                <FormattedMessage {...messages.addButton} />
-              </ButtonWrapper>
+              <OutlinedInput
+                id="searchId"
+                name="searchId"
+                fullWidth
+                placeholder={textPlaceholder}
+                sx={{ height: "50px", backgroundColor: (theme) => theme.palette.background.paper }}
+              />
             </Box>
           </Box>
           <Card>
@@ -58,4 +61,4 @@ const ProductList = () => {
   );
 };
 
-export default ProductList;
+export default OrderList;
