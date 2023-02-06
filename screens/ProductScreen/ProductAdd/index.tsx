@@ -20,7 +20,6 @@ const validationSchema = Yup.object().shape({
   category: Yup.string().required().label("Category"),
 });
 
-
 const ProductAdd = () => {
   const { enqueueSnackbar } = useSnackbar();
   // use formik
@@ -50,7 +49,9 @@ const ProductAdd = () => {
     },
     validationSchema,
     onSubmit: (values, { resetForm }) => {
-      enqueueSnackbar(<FormattedMessage {...messages.successMessage} />, { variant: "success" });
+      enqueueSnackbar(<FormattedMessage {...messages.successMessage} />, {
+        variant: "success",
+      });
       resetForm();
     },
   });
