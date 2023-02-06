@@ -1,7 +1,7 @@
 import { Box, Grid, TextField, Autocomplete } from "@mui/material";
 
 import FormattedMessage from "theme/FormattedMessage";
-import messages from "../messages";
+import messages from "./messages";
 
 const categories = [
   { label: "Electronics", value: 1 },
