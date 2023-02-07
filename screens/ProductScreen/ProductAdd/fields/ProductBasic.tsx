@@ -89,83 +89,16 @@ export const ProductBasic: React.FC<ProductsProps> = ({
             <OutlinedInput
               fullWidth
               id="rate-price"
-              name="ratePrice"
+              name="price"
               placeholder={pricePlaceholder}
-              value={values.ratePrice}
+              value={values.price}
               onBlur={handleBlur}
               onChange={handleChange}
-              error={Boolean(touched.ratePrice && errors.ratePrice)}
+              error={Boolean(touched.price && errors.price)}
             />
-            {touched.ratePrice && errors.ratePrice && (
-              <FormHelperText error id="standard-weight-helper-text-ratePrice">
-                {errors.ratePrice}
-              </FormHelperText>
-            )}
-          </Grid>
-          <Grid item xs={12} lg={4}>
-            <InputLabelWrapper htmlFor="promotional-price">
-              <FormattedMessage {...messages.promotionalPrice} />
-            </InputLabelWrapper>
-            <OutlinedInput
-              fullWidth
-              id="promotional-price"
-              name="promotionalPrice"
-              placeholder={pricePlaceholder}
-              value={values.promotionalPrice}
-              onBlur={handleBlur}
-              onChange={handleChange}
-              error={Boolean(
-                touched.promotionalPrice && errors.promotionalPrice,
-              )}
-            />
-            {touched.promotionalPrice && errors.promotionalPrice && (
-              <FormHelperText
-                error
-                id="standard-weight-helper-text-promotionalPrice"
-              >
-                {errors.promotionalPrice}
-              </FormHelperText>
-            )}
-          </Grid>
-          <Grid item xs={12} lg={4}>
-            <InputLabelWrapper htmlFor="currency">
-              <FormattedMessage {...messages.currency} />
-            </InputLabelWrapper>
-            <Select
-              labelId="currency"
-              id="currencySelect"
-              name="currencySelect"
-              value={values.currencySelect}
-              onChange={(e) => {
-                if (setFieldValue) {
-                  setFieldValue("currencySelect", e.target.value);
-                }
-              }}
-            >
-              {currencies?.map((currency) => (
-                <MenuItem value={currency.id} key={currency.id}>
-                  {currency.name}
-                </MenuItem>
-              ))}
-            </Select>
-          </Grid>
-          <Grid item xs={12}>
-            <InputLabelWrapper htmlFor="tax-rate">
-              <FormattedMessage {...messages.taxRate} />
-            </InputLabelWrapper>
-            <OutlinedInput
-              fullWidth
-              id="tax-rate"
-              name="taxRate"
-              placeholder={percentPlaceholder}
-              value={values.taxRate}
-              onBlur={handleBlur}
-              onChange={handleChange}
-              error={Boolean(touched.taxRate && errors.taxRate)}
-            />
-            {touched.taxRate && errors.taxRate && (
-              <FormHelperText error id="standard-weight-helper-text-taxRate">
-                {errors.taxRate}
+            {touched.price && errors.price && (
+              <FormHelperText error id="standard-weight-helper-text-price">
+                {errors.price}
               </FormHelperText>
             )}
           </Grid>

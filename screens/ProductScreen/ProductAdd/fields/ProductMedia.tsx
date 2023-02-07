@@ -55,16 +55,7 @@ export const ProductMedia: React.FC<ProductsProps> = ({
               inputProps={{ accept: "image/*" }}
               onBlur={handleBlur}
               onChange={handleChange}
-              error={Boolean(touched.shippingFees && errors.shippingFees)}
             />
-            {touched.shippingFees && errors.shippingFees && (
-              <FormHelperText
-                error
-                id="standard-weight-helper-text-shippingFees"
-              >
-                {errors.shippingFees}
-              </FormHelperText>
-            )}
           </Grid>
         </Grid>
       </CardContent>

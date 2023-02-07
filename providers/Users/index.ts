@@ -1,9 +1,9 @@
 import {
-  useQuery,
-  useMutation,
-  UseQueryResult,
-  useQueryClient,
   UseMutationResult,
+  UseQueryResult,
+  useMutation,
+  useQuery,
+  useQueryClient,
 } from "react-query";
 import * as api from "./api";
 import { Users } from "./types";

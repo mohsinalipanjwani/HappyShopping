@@ -6,12 +6,12 @@ const MenuData = [
   {
     title: "Dashboard",
     icon: <HomeIcon />,
-    link: "",
+    link: "/app/dashboard",
   },
   {
     title: "Products",
     icon: <ShoppingBagIcon />,
-    link: "",
+    link: "/app/products",
   },
   {
     title: "Orders",

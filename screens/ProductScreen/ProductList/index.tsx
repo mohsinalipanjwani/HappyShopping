@@ -6,8 +6,13 @@ import Lists from "./lists";
 import messages from "./messages";
 import { ButtonWrapper } from "theme/Buttons";
 import PageLayout from "components/PageLayout";
+import { useRouter } from "next/router";
 
 const ProductList = () => {
+  const router = useRouter();
+  const handleAddBtn = () => {
+    router.push("/app/products/add");
+  };
   return (
     <PageLayout>
       <Box
@@ -41,6 +46,7 @@ const ProductList = () => {
                 color="primary"
                 variant="contained"
                 sx={{ width: "150px" }}
+                onClick={handleAddBtn}
               >
                 <FormattedMessage {...messages.addButton} />
               </ButtonWrapper>

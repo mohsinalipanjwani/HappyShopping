@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Container, Box, Grid, Typography } from "@mui/material";
 import { useFormik } from "formik";
 import { useSnackbar } from "notistack";
@@ -12,16 +13,27 @@ import { ProductShipping } from "./fields/ProductShipping";
 import { ProductMedia } from "./fields/ProductMedia";
 import { ProductOrganization } from "./fields/ProductOrganization";
 import messages from "./messages";
+import { useProductsCreate } from "providers/Products";
+import { useRouter } from "next/router";
 
 const validationSchema = Yup.object().shape({
   title: Yup.string().required().label("title"),
-  ratePrice: Yup.string().required().label("Regular Price"),
-  currencySelect: Yup.string().required().label("Currency"),
+  price: Yup.string().required().label("Regular Price"),
   category: Yup.string().required().label("Category"),
 });
 
 const ProductAdd = () => {
   const { enqueueSnackbar } = useSnackbar();
+  const createProduct = useProductsCreate();
+  const router = useRouter();
+  useEffect(() => {
+    if (createProduct.isSuccess) {
+      enqueueSnackbar(<FormattedMessage {...messages.successMessage} />, {
+        variant: "success",
+      });
+      router.push("/app/products");
+    }
+  }, [createProduct.isSuccess]);
   // use formik
   const {
     handleChange,
@@ -35,22 +47,18 @@ const ProductAdd = () => {
     initialValues: {
       title: "",
       description: "",
-      ratePrice: "",
-      promotionalPrice: "",
-      taxRate: "",
-      shippingWidth: "",
-      shippingHeight: "",
-      shippingWeight: "",
-      shippingFees: "",
-      organizationTaxRate: "",
-      currencySelect: "1",
-      category: "1",
-      subCategory: "1",
+      price: 0,
+      category: "",
+      image: "",
     },
     validationSchema,
     onSubmit: (values, { resetForm }) => {
-      enqueueSnackbar(<FormattedMessage {...messages.successMessage} />, {
-        variant: "success",
+      createProduct.mutate({
+        title: values.title,
+        description: values.description,
+        price: values.price,
+        category: values.category,
+        image: values.image,
       });
       resetForm();
     },
@@ -66,12 +74,7 @@ const ProductAdd = () => {
         }}
       >
         <Container maxWidth={false}>
-          <Box
-            component="form"
-            noValidate
-            autoComplete="off"
-            onSubmit={handleSubmit}
-          >
+          <form onSubmit={handleSubmit}>
             <Box
               sx={{
                 alignItems: "center",
@@ -99,7 +102,7 @@ const ProductAdd = () => {
             </Box>
 
             <Grid container direction="row" spacing={3}>
-              <Grid item xs={12} md={6} lg={8}>
+              <Grid item xs={12} md={6} lg={12}>
                 <ProductBasic
                   handleChange={handleChange}
                   handleBlur={handleBlur}
@@ -108,15 +111,8 @@ const ProductAdd = () => {
                   touched={touched}
                   setFieldValue={setFieldValue}
                 />
-                <ProductShipping
-                  handleChange={handleChange}
-                  handleBlur={handleBlur}
-                  errors={errors}
-                  values={values}
-                  touched={touched}
-                />
               </Grid>
-              <Grid item xs={12} md={6} lg={4}>
+              <Grid item xs={12} md={6} lg={12}>
                 <ProductMedia
                   handleChange={handleChange}
                   handleBlur={handleBlur}
@@ -136,7 +132,7 @@ const ProductAdd = () => {
                 />
               </Grid>
             </Grid>
-          </Box>
+          </form>
         </Container>
       </Box>
     </PageLayout>
@@ -144,3 +140,6 @@ const ProductAdd = () => {
 };
 
 export default ProductAdd;
+function resetForm() {
+  throw new Error("Function not implemented.");
+}

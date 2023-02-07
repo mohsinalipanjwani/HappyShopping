@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import {
   Box,
   Divider,
@@ -49,12 +50,14 @@ const DrawerContent: React.FC<BarComponentProps> = ({ open, clickHandler }) => {
       <Divider />
       <List>
         {MenuData.map((item: any) => (
-          <ListItem key={item.title} disablePadding>
-            <ListItemButton>
-              <ListItemIcon>{item.icon}</ListItemIcon>
-              <ListItemText primary={item.title} />
-            </ListItemButton>
-          </ListItem>
+          <Link href={item.link} key={item.title} passHref={true}>
+            <ListItem key={item.title} disablePadding>
+              <ListItemButton>
+                <ListItemIcon>{item.icon}</ListItemIcon>
+                <ListItemText primary={item.title} />
+              </ListItemButton>
+            </ListItem>
+          </Link>
         ))}
       </List>
     </>
