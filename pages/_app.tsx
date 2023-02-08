@@ -11,6 +11,7 @@ import { QueryCache, QueryClient, QueryClientProvider } from "react-query";
 import { ReactQueryDevtools } from "react-query/devtools";
 import { Hydrate } from "react-query/hydration";
 
+import { AuthContextProvider } from "contexts/AuthContext";
 import ThemeContextProvider from "contexts/ThemeContext";
 import { getLocale, getMessages } from "i18n";
 import { initFirebase } from "platform/initFirebase";
@@ -104,21 +105,21 @@ class MyApp extends App<{
           <ThemeProvider>
             <IntlProvider locale={locale || "en"} messages={messages}>
               <SessionProvider session={session}>
-                {/* <AuthContextProvider> */}
-                <QueryClientProvider client={queryClient}>
-                  <SnackbarProvider
-                    anchorOrigin={{
-                      vertical: "top",
-                      horizontal: "right",
-                    }}
-                  >
-                    <Hydrate state={pageProps.dehydratedState}>
-                      <Component {...pageProps} />
-                    </Hydrate>
-                  </SnackbarProvider>
-                  <ReactQueryDevtools initialIsOpen={false} />
-                </QueryClientProvider>
-                {/* <AuthContextProvider> */}
+                <AuthContextProvider>
+                  <QueryClientProvider client={queryClient}>
+                    <SnackbarProvider
+                      anchorOrigin={{
+                        vertical: "top",
+                        horizontal: "right",
+                      }}
+                    >
+                      <Hydrate state={pageProps.dehydratedState}>
+                        <Component {...pageProps} />
+                      </Hydrate>
+                    </SnackbarProvider>
+                    <ReactQueryDevtools initialIsOpen={false} />
+                  </QueryClientProvider>
+                </AuthContextProvider>
               </SessionProvider>
             </IntlProvider>
           </ThemeProvider>

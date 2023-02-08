@@ -1,9 +1,13 @@
 import React from "react";
 import { Box, Grid, Typography } from "@mui/material";
+
 import FormattedMessage from "theme/FormattedMessage";
+import { LoginImg } from "configs";
+
 import LoginForm from "./LoginForm";
 import messages from "./messages";
 import { BoxWrapper } from "./Styled";
+import Image from "theme/Image";
 
 const LoginScreen: React.FC = () => {
   return (
@@ -12,10 +16,7 @@ const LoginScreen: React.FC = () => {
         <BoxWrapper
           sx={{ backgroundColor: (theme) => theme.palette.primary.main }}
         >
-          <img
-            src="https://collax-react.netlify.app/assets/img/contact/login.png"
-            alt=""
-          />
+          <Image alt="login-img" src={LoginImg} lazyLoad={true} />
         </BoxWrapper>
       </Grid>
       <Grid item xs={12} md={6}>

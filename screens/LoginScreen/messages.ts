@@ -57,4 +57,11 @@ export default defineMessages({
     id: `${scope}.signUp`,
     defaultMessage: "Sign up now",
   },
+
+  
+  // Success Message
+  successMessage: {
+    id: `${scope}.successMessage`,
+    defaultMessage: 'Login Successfully',
+  },
 });

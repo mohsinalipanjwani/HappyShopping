@@ -12,8 +12,8 @@ export const NEXT_PUBLIC_FIREBASE_APP_ID =
 export const NEXT_PUBLIC_MODE_ENV =
   process.env.NEXT_PUBLIC_MODE_ENV === "development";
 
-export const AUTH_LOGIN_URL = process.env.NEXT_PUBLIC_AUTH_LOGIN_URL;
 
+export const AUTH_LOGIN_URL = process.env.NEXT_PUBLIC_AUTH_LOGIN_URL;
 export const PUBLIC_API_URL = process.env.NEXT_PUBLIC_API_URL;
 
 export const Success = {
@@ -31,7 +31,7 @@ export const Warning = {
 };
 export const LOGO = "/logo.svg";
 export const UPLOAD = "/upload-img.svg";
-
+export const LoginImg = "https://collax-react.netlify.app/assets/img/contact/login.png";
 
 export const map: any = {
   active: {
