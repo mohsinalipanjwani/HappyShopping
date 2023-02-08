@@ -31,6 +31,7 @@ export const Warning = {
 };
 export const LOGO = "/logo.svg";
 export const UPLOAD = "/upload-img.svg";
+export const MASTERCARD = "/masterCard.png";
 
 
 export const map: any = {
