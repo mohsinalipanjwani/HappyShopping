@@ -31,7 +31,10 @@ export const Warning = {
 };
 export const LOGO = "/logo.svg";
 export const UPLOAD = "/upload-img.svg";
+
 export const LoginImg = "https://collax-react.netlify.app/assets/img/contact/login.png";
+export const MASTERCARD = "/masterCard.png";
+
 
 export const map: any = {
   active: {
