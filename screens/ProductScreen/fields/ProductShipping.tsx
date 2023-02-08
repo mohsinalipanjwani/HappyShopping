@@ -8,14 +8,14 @@ import {
   Select,
 } from "@mui/material";
 
-import FormattedMessage, { useFormattedMessage } from "theme/FormattedMessage";
 import {
   CardHeaderWrapper,
   InputLabelWrapper,
 } from "screens/ProductScreen/Styled";
+import FormattedMessage, { useFormattedMessage } from "theme/FormattedMessage";
 
 import { ProductsProps } from "./formProps";
-import messages from "../messages";
+import messages from "../ProductAdd/messages";
 
 export const ProductShipping: React.FC<ProductsProps> = ({
   touched,

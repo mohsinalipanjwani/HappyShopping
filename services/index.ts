@@ -31,7 +31,7 @@ export function removeAuthenticationHeader(): void {
 }
 interface IAPArgs {
   url: string;
-  method: "GET" | "POST" | "PATCH" | "DELETE";
+  method: "GET" | "POST" | "PUT" | "DELETE";
   body?: any;
   headers?: any;
   queryParams?: Record<string, any>;

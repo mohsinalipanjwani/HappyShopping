@@ -1,20 +1,18 @@
-import { useEffect } from "react";
-import { Container, Box, Grid, Typography } from "@mui/material";
+import { useEffect, useState } from "react";
+import { useRouter } from "next/router";
+import { LoadingButton } from "@mui/lab";
+import { Box, Container, Grid, Typography } from "@mui/material";
+import { useProductsCreate } from "providers/Products";
 import { useFormik } from "formik";
 import { useSnackbar } from "notistack";
 import * as Yup from "yup";
-
-import { ButtonWrapper } from "theme/Buttons";
 import PageLayout from "components/PageLayout";
+import { ButtonWrapper } from "theme/Buttons";
 import FormattedMessage from "theme/FormattedMessage";
-
-import { ProductBasic } from "./fields/ProductBasic";
-import { ProductShipping } from "./fields/ProductShipping";
-import { ProductMedia } from "./fields/ProductMedia";
-import { ProductOrganization } from "./fields/ProductOrganization";
 import messages from "./messages";
-import { useProductsCreate } from "providers/Products";
-import { useRouter } from "next/router";
+import { ProductBasic } from "../fields/ProductBasic";
+import { ProductMedia } from "../fields/ProductMedia";
+import { ProductOrganization } from "../fields/ProductOrganization";
 
 const validationSchema = Yup.object().shape({
   title: Yup.string().required().label("title"),
@@ -26,6 +24,14 @@ const ProductAdd = () => {
   const { enqueueSnackbar } = useSnackbar();
   const createProduct = useProductsCreate();
   const router = useRouter();
+  const [initial, setInitial] = useState({
+    title: "",
+    description: "",
+    price: 0,
+    category: "",
+    image: "",
+  });
+
   useEffect(() => {
     if (createProduct.isSuccess) {
       enqueueSnackbar(<FormattedMessage {...messages.successMessage} />, {
@@ -33,7 +39,8 @@ const ProductAdd = () => {
       });
       router.push("/app/products");
     }
-  }, [createProduct.isSuccess]);
+  }, [createProduct.isSuccess, enqueueSnackbar, router]);
+
   // use formik
   const {
     handleChange,
@@ -44,13 +51,7 @@ const ProductAdd = () => {
     values,
     touched,
   } = useFormik({
-    initialValues: {
-      title: "",
-      description: "",
-      price: 0,
-      category: "",
-      image: "",
-    },
+    initialValues: initial,
     validationSchema,
     onSubmit: (values, { resetForm }) => {
       createProduct.mutate({
@@ -88,16 +89,20 @@ const ProductAdd = () => {
                 <FormattedMessage {...messages.addTitle} />
               </Typography>
               <Box sx={{ m: 1 }}>
-                <ButtonWrapper variant="outlined" sx={{ mr: 1 }}>
-                  <FormattedMessage {...messages.draftButton} />
-                </ButtonWrapper>
-                <ButtonWrapper
-                  type="submit"
-                  color="primary"
-                  variant="contained"
-                >
-                  <FormattedMessage {...messages.publishButton} />
-                </ButtonWrapper>
+                <>
+                  <LoadingButton
+                    type="submit"
+                    color="primary"
+                    variant="contained"
+                    loading={createProduct.isLoading}
+                    sx={{
+                      padding: "8px",
+                      borderRadius: "7px",
+                    }}
+                  >
+                    <FormattedMessage {...messages.publishButton} />
+                  </LoadingButton>
+                </>
               </Box>
             </Box>
 
@@ -110,6 +115,7 @@ const ProductAdd = () => {
                   values={values}
                   touched={touched}
                   setFieldValue={setFieldValue}
+                  disable={false}
                 />
               </Grid>
               <Grid item xs={12} md={6} lg={12}>
@@ -120,6 +126,7 @@ const ProductAdd = () => {
                   values={values}
                   touched={touched}
                   setFieldValue={setFieldValue}
+                  disable={false}
                 />
 
                 <ProductOrganization
@@ -129,6 +136,7 @@ const ProductAdd = () => {
                   values={values}
                   touched={touched}
                   setFieldValue={setFieldValue}
+                  disable={false}
                 />
               </Grid>
             </Grid>
@@ -140,6 +148,3 @@ const ProductAdd = () => {
 };
 
 export default ProductAdd;
-function resetForm() {
-  throw new Error("Function not implemented.");
-}

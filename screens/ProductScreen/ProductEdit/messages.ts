@@ -9,21 +9,25 @@ import { defineMessages } from "react-intl";
 export const scope = "app.screens.ProductAddScreen";
 
 export default defineMessages({
-  // Add Product Page
-  addTitle: {
-    id: `${scope}.addTitle`,
-    defaultMessage: "Add New Product",
+  // Edit Product Page
+  editTitle: {
+    id: `${scope}.editTitle`,
+    defaultMessage: "Edit Product",
   },
-  publishButton: {
+  defaultTitle: {
+    id: `${scope}.defaultTitle`,
+    defaultMessage: "Product",
+  },
+  defaultButton: {
+    id: `${scope}.defaultButton`,
+    defaultMessage: "Edit",
+  },
+  editButton: {
     id: `${scope}.publishButton`,
-    defaultMessage: "Publish",
-  },
-  draftButton: {
-    id: `${scope}.draftButton`,
-    defaultMessage: "Save to draft",
+    defaultMessage: "Save",
   },
 
-  /** Add Products **/
+  /** Edit Products **/
   basicDetail: {
     id: `${scope}.basicDetail`,
     defaultMessage: "Basic",
@@ -129,6 +133,6 @@ export default defineMessages({
   // Success Message
   successMessage: {
     id: `${scope}.successMessage`,
-    defaultMessage: "Product Added Successfully",
+    defaultMessage: "Product Updated Successfully",
   },
 });

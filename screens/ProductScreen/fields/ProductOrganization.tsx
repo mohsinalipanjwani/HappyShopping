@@ -8,15 +8,15 @@ import {
   Select,
 } from "@mui/material";
 
-import FormattedMessage, { useFormattedMessage } from "theme/FormattedMessage";
 import {
   CardHeaderWrapper,
   InputLabelWrapper,
 } from "screens/ProductScreen/Styled";
+import FormattedMessage, { useFormattedMessage } from "theme/FormattedMessage";
 
 import { ProductsProps } from "./formProps";
-import messages from "../messages";
-import { categories } from "../data";
+import { categories } from "../ProductAdd/data";
+import messages from "../ProductAdd/messages";
 
 export const ProductOrganization: React.FC<ProductsProps> = ({
   touched,
@@ -25,6 +25,7 @@ export const ProductOrganization: React.FC<ProductsProps> = ({
   handleBlur,
   handleChange,
   setFieldValue,
+  disable,
 }) => {
   const percentPlaceholder = useFormattedMessage(messages.percentPlaceholder);
 
@@ -49,6 +50,7 @@ export const ProductOrganization: React.FC<ProductsProps> = ({
                   setFieldValue("category", e.target.value);
                 }
               }}
+              disabled={disable}
             >
               {categories?.map((category) => (
                 <MenuItem value={category.name} key={category.id}>

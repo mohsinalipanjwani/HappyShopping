@@ -8,15 +8,15 @@ import {
   Select,
 } from "@mui/material";
 
-import FormattedMessage, { useFormattedMessage } from "theme/FormattedMessage";
 import {
   CardHeaderWrapper,
   InputLabelWrapper,
 } from "screens/ProductScreen/Styled";
+import FormattedMessage, { useFormattedMessage } from "theme/FormattedMessage";
 
 import { ProductsProps } from "./formProps";
-import messages from "../messages";
-import { currencies } from "../data";
+import { currencies } from "../ProductAdd/data";
+import messages from "../ProductAdd/messages";
 
 export const ProductBasic: React.FC<ProductsProps> = ({
   touched,
@@ -25,6 +25,7 @@ export const ProductBasic: React.FC<ProductsProps> = ({
   handleBlur,
   handleChange,
   setFieldValue,
+  disable,
 }) => {
   const textPlaceholder = useFormattedMessage(messages.textPlaceholder);
   const pricePlaceholder = useFormattedMessage(messages.pricePlaceholder);
@@ -50,6 +51,7 @@ export const ProductBasic: React.FC<ProductsProps> = ({
               onBlur={handleBlur}
               onChange={handleChange}
               error={Boolean(touched.title && errors.title)}
+              disabled={disable}
             />
             {touched.title && errors.title && (
               <FormHelperText error id="standard-weight-helper-text-title">
@@ -72,6 +74,7 @@ export const ProductBasic: React.FC<ProductsProps> = ({
               onBlur={handleBlur}
               onChange={handleChange}
               error={Boolean(touched.description && errors.description)}
+              disabled={disable}
             />
             {touched.description && errors.description && (
               <FormHelperText
@@ -95,6 +98,7 @@ export const ProductBasic: React.FC<ProductsProps> = ({
               onBlur={handleBlur}
               onChange={handleChange}
               error={Boolean(touched.price && errors.price)}
+              disabled={disable}
             />
             {touched.price && errors.price && (
               <FormHelperText error id="standard-weight-helper-text-price">

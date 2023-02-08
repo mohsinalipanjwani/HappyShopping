@@ -11,6 +11,16 @@ export async function fetch(
   });
 }
 
+// Detail
+export async function detail(
+  props: Products.DetailAPIPayload,
+): Promise<Products.DetailResponse> {
+  return service({
+    method: "GET",
+    url: `/products/${props.slug}`,
+  });
+}
+
 // Create
 export async function create(
   props: Products.CreateAPIPayload,
@@ -18,6 +28,27 @@ export async function create(
   return service({
     method: "POST",
     url: `/products`,
+    body: props.data,
+  });
+}
+
+// Remove
+export async function remove(
+  props: Products.RemoveAPIPayload,
+): Promise<Products.RemoveResponse> {
+  return service({
+    method: "DELETE",
+    url: `/products/${props.slug}`,
+  });
+}
+
+// Update
+export async function update(
+  props: Products.UpdateAPIPayload,
+): Promise<Products.UpdateResponse> {
+  return service({
+    method: "PUT",
+    url: `/products/${props.slug}`,
     body: props.data,
   });
 }

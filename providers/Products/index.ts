@@ -30,6 +30,7 @@ export function getFormProviderKey(
 ): import("react-query").InvalidateQueryFilters<unknown> | undefined {
   throw new Error("Function not implemented.");
 }
+
 // Fetch
 export function useProductsListing(
   props: Products.ListingProps = {},
@@ -39,6 +40,13 @@ export function useProductsListing(
     () => api.fetch(props),
     {},
   );
+}
+
+// Detail
+export function useProductsDetail(
+  props: Products.DetailProps,
+): UseQueryResult<Products.DetailResponse> {
+  return useQuery(getKeyFromProps(props, "DETAIL"), () => api.detail(props));
 }
 
 //Create
@@ -57,6 +65,48 @@ export function useProductsCreate(
     onSuccess: () => {
       queryClient.invalidateQueries(getKeyFromProps(props, "LISTING"));
     },
+    retry: 0,
+  });
+}
+
+// Remove
+export function useProductsRemove(
+  props: Products.RemoveProps = {},
+): UseMutationResult<
+  Products.RemoveResponse,
+  {
+    message?: string;
+  },
+  Products.RemoveMutationPayload
+> {
+  const queryClient = useQueryClient();
+  return useMutation((payload) => api.remove(payload), {
+    mutationKey: `${KEY}|Remove`,
+    onSuccess: () => {
+      queryClient.invalidateQueries(getKeyFromProps(props, "LISTING"));
+    },
+    retry: 0,
+  });
+}
+
+// Update
+export function useProductsUpdate(
+  props: Products.UpdateProps,
+): UseMutationResult<
+  Products.UpdateResponse,
+  {
+    message?: string;
+  },
+  Products.UpdateMutationPayload
+> {
+  const queryClient = useQueryClient();
+  return useMutation((payload) => api.update({ ...props, data: payload }), {
+    mutationKey: `${KEY}|Update`,
+
+    onSuccess: () => {
+      queryClient.invalidateQueries(getKeyFromProps(props, "LISTING"));
+    },
+
     retry: 0,
   });
 }
