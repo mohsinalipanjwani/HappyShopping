@@ -1,9 +1,9 @@
 import {
-  useQuery,
-  useMutation,
-  UseQueryResult,
-  useQueryClient,
   UseMutationResult,
+  UseQueryResult,
+  useMutation,
+  useQuery,
+  useQueryClient,
 } from "react-query";
 import * as api from "./api";
 import { Products } from "./types";
@@ -39,4 +39,24 @@ export function useProductsListing(
     () => api.fetch(props),
     {},
   );
+}
+
+//Create
+export function useProductsCreate(
+  props: Products.CreateProps = {},
+): UseMutationResult<
+  Products.CreateResponse,
+  {
+    message?: string;
+  },
+  Products.CreateMutationPayload
+> {
+  const queryClient = useQueryClient();
+  return useMutation((payload) => api.create({ ...props, data: payload }), {
+    mutationKey: `${KEY}|Create`,
+    onSuccess: () => {
+      queryClient.invalidateQueries(getKeyFromProps(props, "LISTING"));
+    },
+    retry: 0,
+  });
 }

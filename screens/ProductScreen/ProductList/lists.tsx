@@ -45,6 +45,12 @@ const columns: GridColDef[] = [
     },
   },
   {
+    field: "description",
+    headerName: "Description",
+    width: 150,
+    hide: true,
+  },
+  {
     field: "createdBy",
     headerName: "Created By",
     minWidth: 150,

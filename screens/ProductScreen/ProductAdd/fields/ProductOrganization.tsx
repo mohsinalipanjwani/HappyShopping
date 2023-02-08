@@ -51,59 +51,11 @@ export const ProductOrganization: React.FC<ProductsProps> = ({
               }}
             >
               {categories?.map((category) => (
-                <MenuItem value={category.id} key={category.id}>
+                <MenuItem value={category.name} key={category.id}>
                   {category.name}
                 </MenuItem>
               ))}
             </Select>
-          </Grid>
-
-          <Grid item xs={12} lg={6}>
-            <InputLabelWrapper htmlFor="sub-category">
-              <FormattedMessage {...messages.subCategory} />
-            </InputLabelWrapper>
-            <Select
-              labelId="sub-category"
-              id="sub-category"
-              name="subCategory"
-              value={values.subCategory}
-              onChange={(e) => {
-                if (setFieldValue) {
-                  setFieldValue("category", e.target.value);
-                }
-              }}
-            >
-              {categories?.map((subcategory) => (
-                <MenuItem value={subcategory.id} key={subcategory.id}>
-                  {subcategory.name}
-                </MenuItem>
-              ))}
-            </Select>
-          </Grid>
-          <Grid item xs={12}>
-            <InputLabelWrapper htmlFor="organization-tax-rate">
-              <FormattedMessage {...messages.taxRate} />
-            </InputLabelWrapper>
-            <OutlinedInput
-              fullWidth
-              id="organization-tax-rate"
-              name="organizationTaxRate"
-              placeholder={percentPlaceholder}
-              value={values.organizationTaxRate}
-              onBlur={handleBlur}
-              onChange={handleChange}
-              error={Boolean(
-                touched.organizationTaxRate && errors.organizationTaxRate,
-              )}
-            />
-            {touched.organizationTaxRate && errors.organizationTaxRate && (
-              <FormHelperText
-                error
-                id="standard-weight-helper-text-organizationTaxRate"
-              >
-                {errors.organizationTaxRate}
-              </FormHelperText>
-            )}
           </Grid>
         </Grid>
       </CardContent>

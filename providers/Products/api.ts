@@ -10,3 +10,14 @@ export async function fetch(
     url: `/products`,
   });
 }
+
+// Create
+export async function create(
+  props: Products.CreateAPIPayload,
+): Promise<Products.CreateResponse> {
+  return service({
+    method: "POST",
+    url: `/products`,
+    body: props.data,
+  });
+}
