@@ -2,18 +2,21 @@ import Typography from "@mui/material/Typography";
 import ThemeSwitcher from "components/ThemeSwitch";
 import FormattedMessage from "theme/FormattedMessage";
 
+import { useAuthContext } from "contexts/AuthContext";
+import { Button } from "@mui/material";
 
 import messages from "./messages";
 import { BoxWrapper } from "./Styled";
-import PageLayout from "../../components/PageLayout";
-import { useAuthContext } from "contexts/AuthContext";
-import { Button } from "@mui/material";
+
+const PageLayout = dynamic(() => import("components/PageLayout"), {
+    ssr: false,
+});
 
 const HomeScreen: React.FC = () => {
 const { signOut } = useAuthContext();
 
   return (
-    <>
+    <PageLayout>
       <BoxWrapper>
         <Typography>
           <FormattedMessage {...messages.title} />
@@ -26,7 +29,7 @@ const { signOut } = useAuthContext();
       <Button onClick={() => signOut()}>
         SignOut
       </Button>
-    </>
+    </PageLayout>
   );
 };
 
