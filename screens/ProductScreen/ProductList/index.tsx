@@ -1,12 +1,12 @@
-import { Container, Box, Card, CardContent, Typography } from "@mui/material";
+import { useRouter } from "next/router";
+import { Box, Card, CardContent, Container, Typography } from "@mui/material";
 
+import PageLayout from "components/PageLayout";
+import { ButtonWrapper } from "theme/Buttons";
 import FormattedMessage from "theme/FormattedMessage";
 import Filters from "./filters";
 import Lists from "./lists";
 import messages from "./messages";
-import { ButtonWrapper } from "theme/Buttons";
-import PageLayout from "components/PageLayout";
-import { useRouter } from "next/router";
 
 const ProductList = () => {
   const router = useRouter();

@@ -9,6 +9,10 @@ import { defineMessages } from "react-intl";
 export const scope = "app.screens.ProductScreen";
 
 export default defineMessages({
+  successMessage: {
+    id: `${scope}.successMessage`,
+    defaultMessage: "Product Deleted Successfully",
+  },
   listTitle: {
     id: `${scope}.listTitle`,
     defaultMessage: "Products",
