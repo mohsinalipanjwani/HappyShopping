@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useCallback, useEffect } from "react";
+import { useSession, signIn, signOut } from "next-auth/react";
+
 import {
   Box,
   Checkbox,
@@ -7,11 +9,16 @@ import {
   Link,
   TextField,
 } from "@mui/material";
+
 import { useFormik } from "formik";
 import * as Yup from "yup";
+import { useSnackbar } from "notistack";
+
 import FormattedMessage, { useFormattedMessage } from "theme/FormattedMessage";
+
 import messages from "./messages";
 import { ButtonWrapper } from "./Styled";
+import { useAuthContext } from "contexts/AuthContext";
 
 const validationSchema = Yup.object().shape({
   email: Yup.string().required().email().label("Email"),
@@ -19,14 +26,25 @@ const validationSchema = Yup.object().shape({
 });
 
 const LoginForm = () => {
+  const { enqueueSnackbar } = useSnackbar();
+  const {signIn} = useAuthContext();
+ 
+  const onSubmit = useCallback(
+    async (data: any) => {
+      const resp: any = await signIn("credentials", {
+        ...data,
+        redirect: false,
+      });
+    },
+    [],
+  );
+  
   // use formik
   const { handleChange, handleSubmit, handleBlur, errors, values, touched } =
     useFormik({
       initialValues: { email: "", password: "" },
       validationSchema,
-      onSubmit: (values, { resetForm }) => {
-        resetForm();
-      },
+      onSubmit
     });
 
   // handleResetPass
@@ -41,11 +59,11 @@ const LoginForm = () => {
         <Grid item>
           <TextField
             id="email"
+            name="email"
             label={<FormattedMessage {...messages.emailLabel} />}
             value={values.email}
             onChange={handleChange}
             onBlur={handleBlur}
-            type="text"
             placeholder={emailPlaceholder}
             error={touched.email && Boolean(errors.email)}
             helperText={touched.email && errors.email}
@@ -56,6 +74,7 @@ const LoginForm = () => {
         <Grid item>
           <TextField
             id="password"
+            name="password"
             label={<FormattedMessage {...messages.passwordLabel} />}
             value={values.password}
             onChange={handleChange}
